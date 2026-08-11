@@ -22,3 +22,8 @@ jobs:
             git pull origin main
             echo "git pull done"
             git log -1 --oneline
+
+            echo "build docker"
+            docker build -t demo-dockerne .
+
+            echo "Build docker thanh con"
