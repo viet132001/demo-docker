@@ -1,4 +1,4 @@
-name: Deploy
+name: deploy
 
 on:
   push:
@@ -18,14 +18,6 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
 
           script: |
-            cd ~/apps/docker-demo
-            git pull origin main
-
-            docker build -t docker-demo .
-
-            docker stop docker-demo || true
-            docker rm docker-demo || true
-
-            docker run -d \
-              --name docker-demo \
-              docker-demo
+            echo "Hello from GitHub Actions!"
+            echo "Server: $(hostname)"
+            echo "User: $(whoami)"
