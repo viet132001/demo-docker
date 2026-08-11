@@ -18,6 +18,7 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
 
           script: |
-            echo "Hello from GitHub Actions!"
-            echo "Server: $(hostname)"
-            echo "User: $(whoami)"
+            cd ~/apps/demo-docker
+            git pull origin main
+            echo "git pull done"
+            git log -1 --online
